@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Blog Archives - A coder in the attic</title>
+	<title>Thinking of solutions for remote blogging with Octopress - A coder in the attic</title>
 	<meta name="author" content="Huu Hoa NGUYEN">
 
 	
-	<meta name="description" content=" 2014 Thinking of solutions for remote blogging with Octopress Jan 31 octopress, remote blogging A Year in review Jan 30 ">
+	<meta name="description" content="After done setting up blogging solution with Octopress, which is this blog is now powered by, I&rsquo;m thinking of finding a solution to write blog &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,46 +77,75 @@
 	
 		
 	
-	<div id="content" class="inner">
-	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Thinking of solutions for remote blogging with Octopress</h2>
+	<div class="entry-content"><p>After done setting up blogging solution with Octopress, which is this blog is now powered by, I&rsquo;m thinking of finding a solution to write blog post from iPhone. The first site came up from Google results is <a href="http://www.candlerblog.com/2012/04/01/remote-octopress-workflow">this one</a>. The solution seems very neat, it involves setting up a shared folder on Dropbox and a SSH server to run the Octopress flows. Setup a shared folder in Dropbox for holding git repository is easy part. The harder part is getting a always-on SSH server.</p>
+
+<p>Currently I think of three solutions:</p>
+
+<ol>
+<li>Make use of existing SmartTV box which is now running Android 4.2 to be a SSH server</li>
+<li>Purchase a minimal VPS instance.</li>
+<li>Purchase a Raspberry Pi and make it a SSH server</li>
+</ol>
 
 
-	
-	
-	<section class="archives"><h1 class="year">2014</h1>
+<p>First solution is free because I already have one SmartTV box. However making Android box running RVM seems to be a difficult task. Further search, there is an attempt to <a href="http://forum.xda-developers.com/showthread.php?t=1585009">run a Linux distro on Android</a>. It looks promising and worth a try.</p>
 
-<article>
-	<h2 class="title"><a href="/blog/2014/01/31/thinking-of-solutions-for-remote-blogging-with-octopress/">Thinking of solutions for remote blogging with Octopress</a></h2>
-	<div class="meta">
-		<div class="date">Jan 31</div>
-		<div class="tags">
+<p>Second solution will cost at least 5$/month for a VPS instance. Which is not a good way to go at the moment.</p>
+
+<p>Third solution will cost about 40$ and I&rsquo;ll got a Raspberry Pi for something else.</p>
+
+<p>In conclusion, first solution goes first. If it is impossible to run RVM on Android box and come third solution.</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-31T23:51:51+07:00" pubdate data-updated="true">Jan 31<span>st</span>, 2014</time></div>
+	<div class="tags">
 
 
 	<a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/remote-blogging/'>remote blogging</a>
 
 
 </div>
-	    
-	</div>
-</article>
 	
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2014/01/30/a-year-in-review/">A Year in review</a></h2>
-	<div class="meta">
-		<div class="date">Jan 30</div>
-		<div class="tags">
-
 </div>
-	    
-	</div>
 </article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+		
+		
+		<a class="addthis_button_tweet"></a>
+		
+		
+		
+	</div>
 	
-	</section>
-	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
@@ -136,7 +165,10 @@
       var disqus_shortname = 'huuhoa';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://huuhoa.blackci.com/blog/2014/01/31/thinking-of-solutions-for-remote-blogging-with-octopress/';
+        var disqus_url = 'http://huuhoa.blackci.com/blog/2014/01/31/thinking-of-solutions-for-remote-blogging-with-octopress/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

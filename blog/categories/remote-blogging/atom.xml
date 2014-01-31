@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[A coder in the attic]]></title>
-  <link href="http://huuhoa.blackci.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: remote blogging | A coder in the attic]]></title>
+  <link href="http://huuhoa.blackci.com/blog/categories/remote-blogging/atom.xml" rel="self"/>
   <link href="http://huuhoa.blackci.com/"/>
   <updated>2014-02-01T00:30:19+07:00</updated>
   <id>http://huuhoa.blackci.com/</id>
@@ -36,25 +36,6 @@
 <p>Third solution will cost about 40$ and I&rsquo;ll got a Raspberry Pi for something else.</p>
 
 <p>In conclusion, first solution goes first. If it is impossible to run RVM on Android box and come third solution.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A Year in review]]></title>
-    <link href="http://huuhoa.blackci.com/blog/2014/01/30/a-year-in-review/"/>
-    <updated>2014-01-30T14:43:13+07:00</updated>
-    <id>http://huuhoa.blackci.com/blog/2014/01/30/a-year-in-review</id>
-    <content type="html"><![CDATA[<p>Today is last day of Snake&rsquo;s Year. It&rsquo;s time to review what has been done, what has been left.</p>
-
-<ol>
-<li>Learnt new language, ie. Objective-C, and worked with it for a year.</li>
-<li>Released some versions of two apps on AppStore.</li>
-<li>One major project is still not in good form, which means, it is moved to new year.</li>
-<li>PM is still far from real.</li>
-</ol>
-
-
-<p>Year of Hourse is coming and there are some works to do. Let&rsquo;s rock and roll.</p>
 ]]></content>
   </entry>
   
