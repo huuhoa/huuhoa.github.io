@@ -3,7 +3,7 @@ layout: post
 title: "A Year in review"
 date: 2014-01-30 14:43:13 +0700
 comments: true
-categories: 
+categories: review
 ---
 Today is last day of Snake's Year. It's time to review what has been done, what has been left.
 
