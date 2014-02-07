@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ios | A coder in the attic]]></title>
+  <link href="http://huuhoa.blackci.com/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://huuhoa.blackci.com/"/>
+  <updated>2014-02-07T22:15:47+07:00</updated>
+  <id>http://huuhoa.blackci.com/</id>
+  <author>
+    <name><![CDATA[Huu Hoa NGUYEN]]></name>
+    <email><![CDATA[huuhoa@blackci.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting started with Cocos2D-X]]></title>
+    <link href="http://huuhoa.blackci.com/blog/2014/02/07/getting-started-with-cocos2d-x/"/>
+    <updated>2014-02-07T22:12:11+07:00</updated>
+    <id>http://huuhoa.blackci.com/blog/2014/02/07/getting-started-with-cocos2d-x</id>
+    <content type="html"><![CDATA[<p>With impact of FlappyBird, I am now starting to learn how to make small game in iOS with <a href="http://www.cocos2d-x.org">Cocos2D-x</a> by begin with <a href="http://www.raywenderlich.com/33750/cocos2d-x-tutorial-for-ios-and-android-getting-started">a tutorial</a></p>
+]]></content>
+  </entry>
+  
+</feed>
