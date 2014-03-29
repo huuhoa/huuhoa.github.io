@@ -4,7 +4,7 @@
   <title><![CDATA[A coder in the attic]]></title>
   <link href="http://huuhoa.blackci.com/atom.xml" rel="self"/>
   <link href="http://huuhoa.blackci.com/"/>
-  <updated>2014-02-07T22:15:47+07:00</updated>
+  <updated>2014-03-29T11:19:09+07:00</updated>
   <id>http://huuhoa.blackci.com/</id>
   <author>
     <name><![CDATA[Huu Hoa NGUYEN]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Delay function call with ReactiveCocoa]]></title>
+    <link href="http://huuhoa.blackci.com/blog/2014/03/29/delay-function-call-with-reactivecocoa/"/>
+    <updated>2014-03-29T11:14:02+07:00</updated>
+    <id>http://huuhoa.blackci.com/blog/2014/03/29/delay-function-call-with-reactivecocoa</id>
+    <content type="html"><![CDATA[<p>Delay a function call is possible with ReactiveCocoa with &ndash;[RACSignal delay:]</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">delayLogString:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">string</span> <span class="nf">timeInterval:</span><span class="p">(</span><span class="n">NSTimeInterval</span><span class="p">)</span><span class="nv">timeInterval</span> <span class="p">{</span>
+</span><span class='line'>  <span class="p">[[[</span><span class="n">RACSignal</span> <span class="n">empty</span><span class="p">]</span> <span class="nl">delay:</span><span class="n">timeInterval</span><span class="p">]</span> <span class="nl">subscribeComplete:</span><span class="o">^</span><span class="p">{</span>
+</span><span class='line'>      <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;This log message is printed out after %f seconds&quot;</span><span class="p">,</span> <span class="n">timeInterval</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}];</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Getting started with Cocos2D-X]]></title>
