@@ -9,7 +9,9 @@
   <meta name="author" content="Huu Hoa NGUYEN">
 
   
-  <meta name="description" content="There is nothing fancy by installing new OS. It&rsquo;s dead simple to install Ubuntu server for learning purpose. First, go to here to download &hellip;">
+  <meta name="description" content="Objective: Install and configure * SSH Server
+* Java JDK Install and configure SSH 1
+$ sudo apt-get install openssh-server Setup SSH certificate 1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +86,82 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/">Configuring Ubuntu Server 14.04 LTS</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-18T17:27:00+07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Objective: Install and configure</p>
+
+<pre><code>*   SSH Server
+*   Java JDK
+</code></pre>
+
+<ol>
+<li>Install and configure SSH</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openssh-server</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Setup SSH certificate</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>scp ~/.ssh/id_rsa.pub &lt;username&gt;@&lt;host&gt;:~/.ssh/authorized_keys</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>Install and configure Java JDK</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openjdk-7-jdk
+</span><span class='line'>
+</span><span class='line'>$ java -version
+</span><span class='line'>java version "1.7.0_51"
+</span><span class='line'>OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
+</span><span class='line'>OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -339,6 +417,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/">Configuring Ubuntu Server 14.04 LTS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/18/installing-ubuntu-server-14-dot-04-lts/">Installing Ubuntu Server 14.04 LTS</a>
       </li>
     
@@ -352,10 +434,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/31/thinking-of-solutions-for-remote-blogging-with-octopress/">Thinking of solutions for remote blogging with Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/30/a-year-in-review/">A Year in review</a>
       </li>
     
   </ul>

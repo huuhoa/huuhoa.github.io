@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: octopress - A coder in the attic</title>
+  <title>Configuring Ubuntu Server 14.04 LTS - A coder in the attic</title>
   <meta name="author" content="Huu Hoa NGUYEN">
 
   
-  <meta name="description" content="Category: octopress">
+  <meta name="description" content="Objective: Install and configure * SSH Server
+* Java JDK Install and configure SSH 1
+$ sudo apt-get install openssh-server Setup SSH certificate 1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://huuhoa.blackci.comblog/categories/octopress/">
+  <link rel="canonical" href="http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,36 +85,133 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: octopress</h1>
+    
+      
+        <h1 class="entry-title">Configuring Ubuntu Server 14.04 LTS</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-18T17:27:00+07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Objective: Install and configure</p>
 
-  
-  <h2>2014</h2>
+<pre><code>*   SSH Server
+*   Java JDK
+</code></pre>
 
-<article>
-  
-<h1><a href="/blog/2014/01/31/thinking-of-solutions-for-remote-blogging-with-octopress/">Thinking of solutions for remote blogging with Octopress</a></h1>
-<time datetime="2014-01-31T23:51:51+07:00" pubdate><span class='month'>Jan</span> <span class='day'>31</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/remote-blogging/'>remote blogging</a></span>
-</footer>
+<ol>
+<li>Install and configure SSH</li>
+</ol>
 
 
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openssh-server</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Setup SSH certificate</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>scp ~/.ssh/id_rsa.pub &lt;username&gt;@&lt;host&gt;:~/.ssh/authorized_keys</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>Install and configure Java JDK</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openjdk-7-jdk
+</span><span class='line'>
+</span><span class='line'>$ java -version
+</span><span class='line'>java version "1.7.0_51"
+</span><span class='line'>OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
+</span><span class='line'>OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Huu Hoa NGUYEN</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-18T17:27:00+07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/learning/'>learning</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/" data-via="huuhoa" data-counturl="http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2014/04/18/installing-ubuntu-server-14-dot-04-lts/" title="Previous Post: Installing Ubuntu Server 14.04 LTS">&laquo; Installing Ubuntu Server 14.04 LTS</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -196,7 +295,10 @@
       var disqus_shortname = 'huuhoa';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/';
+        var disqus_url = 'http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

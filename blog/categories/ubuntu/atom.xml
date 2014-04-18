@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | A coder in the attic]]></title>
   <link href="http://huuhoa.blackci.com/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://huuhoa.blackci.com/"/>
-  <updated>2014-04-18T16:23:37+07:00</updated>
+  <updated>2014-04-18T17:55:07+07:00</updated>
   <id>http://huuhoa.blackci.com/</id>
   <author>
     <name><![CDATA[Huu Hoa NGUYEN]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Configuring Ubuntu Server 14.04 LTS]]></title>
+    <link href="http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/"/>
+    <updated>2014-04-18T17:27:00+07:00</updated>
+    <id>http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts</id>
+    <content type="html"><![CDATA[<p>Objective: Install and configure</p>
+
+<pre><code>*   SSH Server
+*   Java JDK
+</code></pre>
+
+<ol>
+<li>Install and configure SSH
+<code>
+$ sudo apt-get install openssh-server
+</code></li>
+</ol>
+
+
+<p>Setup SSH certificate
+<code>
+scp ~/.ssh/id_rsa.pub &lt;username&gt;@&lt;host&gt;:~/.ssh/authorized_keys
+</code></p>
+
+<ol>
+<li>Install and configure Java JDK</li>
+</ol>
+
+
+<p>```
+$ sudo apt-get install openjdk-7-jdk</p>
+
+<p>$ java -version
+java version &ldquo;1.7.0_51&rdquo;
+OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
+OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Installing Ubuntu Server 14.04 LTS]]></title>
