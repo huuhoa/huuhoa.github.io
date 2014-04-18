@@ -4,7 +4,7 @@
   <title><![CDATA[A coder in the attic]]></title>
   <link href="http://huuhoa.blackci.com/atom.xml" rel="self"/>
   <link href="http://huuhoa.blackci.com/"/>
-  <updated>2014-03-29T15:08:51+07:00</updated>
+  <updated>2014-04-18T16:23:37+07:00</updated>
   <id>http://huuhoa.blackci.com/</id>
   <author>
     <name><![CDATA[Huu Hoa NGUYEN]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Ubuntu Server 14.04 LTS]]></title>
+    <link href="http://huuhoa.blackci.com/blog/2014/04/18/installing-ubuntu-server-14-dot-04-lts/"/>
+    <updated>2014-04-18T14:33:11+07:00</updated>
+    <id>http://huuhoa.blackci.com/blog/2014/04/18/installing-ubuntu-server-14-dot-04-lts</id>
+    <content type="html"><![CDATA[<p>There is nothing fancy by installing new OS. It&rsquo;s dead simple to install Ubuntu server for learning purpose.</p>
+
+<ol>
+<li>First, go to <a href="http://www.ubuntu.com/download/server">here</a> to download ubuntu-14.04-server-amd64.iso file.</li>
+<li>Second, mount iso file to Virtual Box/Parallel Desktop and install OS from there.</li>
+<li>Third, wait and see.</li>
+</ol>
+
+
+<p>Screenshots:
+<img src="http://huuhoa.blackci.com/images/install-ubuntu/image1.png" alt="installing" />
+<img src="http://huuhoa.blackci.com/images/install-ubuntu/image2.png" alt="server's ready" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Delay function call with ReactiveCocoa]]></title>
