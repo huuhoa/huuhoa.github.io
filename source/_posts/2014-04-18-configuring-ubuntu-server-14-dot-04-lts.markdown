@@ -25,7 +25,8 @@ scp ~/.ssh/id_rsa.pub <username>@<host>:~/.ssh/authorized_keys
 
 ```
 $ sudo apt-get install openjdk-7-jdk
-
+$ cd /usr/lib/jvm
+$ sudo ln -s java-7-openjdk-amd64 jdk
 $ java -version
 java version "1.7.0_51"
 OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
