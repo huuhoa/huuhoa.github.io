@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ubuntu | A coder in the attic]]></title>
-  <link href="http://huuhoa.blackci.com/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <title><![CDATA[Category: hadoop | A coder in the attic]]></title>
+  <link href="http://huuhoa.blackci.com/blog/categories/hadoop/atom.xml" rel="self"/>
   <link href="http://huuhoa.blackci.com/"/>
   <updated>2014-04-19T08:24:36+07:00</updated>
   <id>http://huuhoa.blackci.com/</id>
@@ -120,67 +120,6 @@ $ sudo -u hduser sed -i.bak &rsquo;s=<configuration>=<configuration>&lt;property
 <h1>sudo -u hduser hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 2 5</h1>
 
 <p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Configuring Ubuntu Server 14.04 LTS]]></title>
-    <link href="http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/"/>
-    <updated>2014-04-18T17:27:00+07:00</updated>
-    <id>http://huuhoa.blackci.com/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts</id>
-    <content type="html"><![CDATA[<p>Objective: Install and configure</p>
-
-<pre><code>*   SSH Server
-*   Java JDK
-</code></pre>
-
-<ol>
-<li>Install and configure SSH
-<code>
-$ sudo apt-get install openssh-server
-</code></li>
-</ol>
-
-
-<p>Setup SSH certificate
-<code>
-scp ~/.ssh/id_rsa.pub &lt;username&gt;@&lt;host&gt;:~/.ssh/authorized_keys
-</code></p>
-
-<ol>
-<li>Install and configure Java JDK</li>
-</ol>
-
-
-<p><code>
-$ sudo apt-get install openjdk-7-jdk
-$ cd /usr/lib/jvm
-$ sudo ln -s java-7-openjdk-amd64 jdk
-$ java -version
-java version "1.7.0_51"
-OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
-OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
-</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Installing Ubuntu Server 14.04 LTS]]></title>
-    <link href="http://huuhoa.blackci.com/blog/2014/04/18/installing-ubuntu-server-14-dot-04-lts/"/>
-    <updated>2014-04-18T14:33:11+07:00</updated>
-    <id>http://huuhoa.blackci.com/blog/2014/04/18/installing-ubuntu-server-14-dot-04-lts</id>
-    <content type="html"><![CDATA[<p>There is nothing fancy by installing new OS. It&rsquo;s dead simple to install Ubuntu server for learning purpose.</p>
-
-<ol>
-<li>First, go to <a href="http://www.ubuntu.com/download/server">here</a> to download ubuntu-14.04-server-amd64.iso file.</li>
-<li>Second, mount iso file to Virtual Box/Parallel Desktop and install OS from there.</li>
-<li>Third, wait and see.</li>
-</ol>
-
-
-<p>Screenshots:
-<img src="/images/install-ubuntu/image1.png" alt="installing" />
-<img src="/images/install-ubuntu/image2.png" alt="server's ready" /></p>
 ]]></content>
   </entry>
   

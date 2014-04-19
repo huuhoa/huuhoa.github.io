@@ -146,8 +146,10 @@ $ sudo apt-get install openssh-server Setup SSH certificate 1 &hellip;">
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
+<span class='line-number'>7</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openjdk-7-jdk
-</span><span class='line'>
+</span><span class='line'>$ cd /usr/lib/jvm
+</span><span class='line'>$ sudo ln -s java-7-openjdk-amd64 jdk
 </span><span class='line'>$ java -version
 </span><span class='line'>java version "1.7.0_51"
 </span><span class='line'>OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
@@ -203,6 +205,8 @@ $ sudo apt-get install openssh-server Setup SSH certificate 1 &hellip;">
         <a class="basic-alignment left articlenav" href="/blog/2014/04/18/installing-ubuntu-server-14-dot-04-lts/" title="Previous Post: Installing Ubuntu Server 14.04 LTS">&laquo; Installing Ubuntu Server 14.04 LTS</a>
       
       
+        <a class="basic-alignment right articlenav" href="/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/" title="Next Post: Install and Configure Hadoop on Ubuntu 14.04 LTS">Install and Configure Hadoop on Ubuntu 14.04 LTS &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -222,6 +226,10 @@ $ sudo apt-get install openssh-server Setup SSH certificate 1 &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/">Install and Configure Hadoop on Ubuntu 14.04 LTS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/">Configuring Ubuntu Server 14.04 LTS</a>
       </li>
     
@@ -235,10 +243,6 @@ $ sudo apt-get install openssh-server Setup SSH certificate 1 &hellip;">
     
       <li class="post">
         <a href="/blog/2014/02/07/getting-started-with-cocos2d-x/">Getting started with Cocos2D-X</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/31/thinking-of-solutions-for-remote-blogging-with-octopress/">Thinking of solutions for remote blogging with Octopress</a>
       </li>
     
   </ul>

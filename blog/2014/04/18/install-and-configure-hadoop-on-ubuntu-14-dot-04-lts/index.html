@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>A coder in the attic</title>
+  <title>Install and Configure Hadoop on Ubuntu 14.04 LTS - A coder in the attic</title>
   <meta name="author" content="Huu Hoa NGUYEN">
 
   
@@ -25,7 +25,7 @@ $ wget http://apache. &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://huuhoa.blackci.com/">
+  <link rel="canonical" href="http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -89,16 +89,13 @@ $ wget http://apache. &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/">Install and Configure Hadoop on Ubuntu 14.04 LTS</a></h1>
+      
+        <h1 class="entry-title">Install and Configure Hadoop on Ubuntu 14.04 LTS</h1>
       
     
     
@@ -122,7 +119,7 @@ $ wget http://apache. &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>Following steps were copied from a <a href="http://codesfusion.blogspot.com/2013/10/setup-hadoop-2x-220-on-ubuntu.html">blog post</a> and kept here for reference purpose only.</p>
+<div class="entry-content"><p>Following steps were copied from a <a href="http://codesfusion.blogspot.com/2013/10/setup-hadoop-2x-220-on-ubuntu.html">blog post</a> and kept here for reference purpose only.</p>
 
 <h1>Download Hadoop 2.4.0</h1>
 
@@ -273,24 +270,16 @@ At this point, hadoop is installed.</p>
 </span><span class='line'># sudo -u hduser hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 2 5</span></code></pre></td></tr></table></div></figure>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/">Configuring Ubuntu Server 14.04 LTS</a></h1>
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Huu Hoa NGUYEN</span></span>
+
       
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -302,308 +291,46 @@ At this point, hadoop is installed.</p>
   
 
 
-<time datetime="2014-04-18T17:27:00+07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
-        
-      </p>
+<time datetime="2014-04-18T23:38:24+07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/hadoop/'>hadoop</a>, <a class='category' href='/blog/categories/learning/'>learning</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/" data-via="huuhoa" data-counturl="http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2014/04/18/configuring-ubuntu-server-14-dot-04-lts/" title="Previous Post: Configuring Ubuntu Server 14.04 LTS">&laquo; Configuring Ubuntu Server 14.04 LTS</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-  <div class="entry-content"><p>Objective: Install and configure</p>
-
-<pre><code>*   SSH Server
-*   Java JDK
-</code></pre>
-
-<ol>
-<li>Install and configure SSH</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openssh-server</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Setup SSH certificate</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>scp ~/.ssh/id_rsa.pub &lt;username&gt;@&lt;host&gt;:~/.ssh/authorized_keys</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>Install and configure Java JDK</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openjdk-7-jdk
-</span><span class='line'>$ cd /usr/lib/jvm
-</span><span class='line'>$ sudo ln -s java-7-openjdk-amd64 jdk
-</span><span class='line'>$ java -version
-</span><span class='line'>java version "1.7.0_51"
-</span><span class='line'>OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
-</span><span class='line'>OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)</span></code></pre></td></tr></table></div></figure>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/04/18/installing-ubuntu-server-14-dot-04-lts/">Installing Ubuntu Server 14.04 LTS</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-18T14:33:11+07:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There is nothing fancy by installing new OS. It&rsquo;s dead simple to install Ubuntu server for learning purpose.</p>
-
-<ol>
-<li>First, go to <a href="http://www.ubuntu.com/download/server">here</a> to download ubuntu-14.04-server-amd64.iso file.</li>
-<li>Second, mount iso file to Virtual Box/Parallel Desktop and install OS from there.</li>
-<li>Third, wait and see.</li>
-</ol>
-
-
-<p>Screenshots:
-<img src="/images/install-ubuntu/image1.png" alt="installing" />
-<img src="/images/install-ubuntu/image2.png" alt="server's ready" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/03/29/delay-function-call-with-reactivecocoa/">Delay function call with ReactiveCocoa</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-29T11:14:02+07:00" pubdate data-updated="true">Mar 29<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Delay a function call is possible with ReactiveCocoa with &ndash;[RACSignal delay:]</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">delayLogString:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">string</span> <span class="nf">timeInterval:</span><span class="p">(</span><span class="n">NSTimeInterval</span><span class="p">)</span><span class="nv">timeInterval</span> <span class="p">{</span>
-</span><span class='line'>  <span class="p">[[[</span><span class="n">RACSignal</span> <span class="n">empty</span><span class="p">]</span> <span class="nl">delay:</span><span class="n">timeInterval</span><span class="p">]</span> <span class="nl">subscribeComplete:</span><span class="o">^</span><span class="p">{</span>
-</span><span class='line'>      <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;This log message is printed out after %f seconds&quot;</span><span class="p">,</span> <span class="n">timeInterval</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}];</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/02/07/getting-started-with-cocos2d-x/">Getting started with Cocos2D-X</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-07T22:12:11+07:00" pubdate data-updated="true">Feb 7<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>With impact of FlappyBird, I am now starting to learn how to make small game in iOS with <a href="http://www.cocos2d-x.org">Cocos2D-x</a> by begin with <a href="http://www.raywenderlich.com/33750/cocos2d-x-tutorial-for-ios-and-android-getting-started">a tutorial</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/01/31/thinking-of-solutions-for-remote-blogging-with-octopress/">Thinking of solutions for remote blogging with Octopress</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-31T23:51:51+07:00" pubdate data-updated="true">Jan 31<span>st</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>After done setting up blogging solution with Octopress, which is this blog is now powered by, I&rsquo;m thinking of finding a solution to write blog post from iPhone. The first site came up from Google results is <a href="http://www.candlerblog.com/2012/04/01/remote-octopress-workflow">this one</a>. The solution seems very neat, it involves setting up a shared folder on Dropbox and a SSH server to run the Octopress flows. Setup a shared folder in Dropbox for holding git repository is easy part. The harder part is getting a always-on SSH server.</p>
-
-<p>Currently I think of three solutions:</p>
-
-<ol>
-<li>Make use of existing SmartTV box which is now running Android 4.2 to be a SSH server</li>
-<li>Purchase a minimal VPS instance.</li>
-<li>Purchase a Raspberry Pi and make it a SSH server</li>
-</ol>
-
-
-<p>First solution is free because I already have one SmartTV box. However making Android box running RVM seems to be a difficult task. Further search, there is an attempt to <a href="http://forum.xda-developers.com/showthread.php?t=1585009">run a Linux distro on Android</a>. It looks promising and worth a try.</p>
-
-<p>Second solution will cost at least 5$/month for a VPS instance. Which is not a good way to go at the moment.</p>
-
-<p>Third solution will cost about 40$ and I&rsquo;ll got a Raspberry Pi for something else.</p>
-
-<p>In conclusion, first solution goes first. If it is impossible to run RVM on Android box and come third solution.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/01/30/a-year-in-review/">A Year in review</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-30T14:43:13+07:00" pubdate data-updated="true">Jan 30<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Today is last day of Snake&rsquo;s Year. It&rsquo;s time to review what has been done, what has been left.</p>
-
-<ol>
-<li>Learnt new language, ie. Objective-C, and worked with it for a year.</li>
-<li>Released some versions of two apps on AppStore.</li>
-<li>One major project is still not in good form, which means, it is moved to new year.</li>
-<li>PM is still far from real.</li>
-</ol>
-
-
-<p>Year of Hourse is coming and there are some works to do. Let&rsquo;s rock and roll.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -636,7 +363,7 @@ At this point, hadoop is installed.</p>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/huuhoa">@huuhoa</a> on GitHub
@@ -669,6 +396,7 @@ At this point, hadoop is installed.</p>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -683,7 +411,10 @@ At this point, hadoop is installed.</p>
       var disqus_shortname = 'huuhoa';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/';
+        var disqus_url = 'http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

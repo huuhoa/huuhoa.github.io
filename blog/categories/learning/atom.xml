@@ -4,7 +4,7 @@
   <title><![CDATA[Category: learning | A coder in the attic]]></title>
   <link href="http://huuhoa.blackci.com/blog/categories/learning/atom.xml" rel="self"/>
   <link href="http://huuhoa.blackci.com/"/>
-  <updated>2014-04-18T17:55:07+07:00</updated>
+  <updated>2014-04-19T08:24:36+07:00</updated>
   <id>http://huuhoa.blackci.com/</id>
   <author>
     <name><![CDATA[Huu Hoa NGUYEN]]></name>
@@ -12,6 +12,116 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Install and Configure Hadoop on Ubuntu 14.04 LTS]]></title>
+    <link href="http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/"/>
+    <updated>2014-04-18T23:38:24+07:00</updated>
+    <id>http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts</id>
+    <content type="html"><![CDATA[<p>Following steps were copied from a <a href="http://codesfusion.blogspot.com/2013/10/setup-hadoop-2x-220-on-ubuntu.html">blog post</a> and kept here for reference purpose only.</p>
+
+<h1>Download Hadoop 2.4.0</h1>
+
+<p><code>
+$ cd ~
+$ wget http://apache.osuosl.org/hadoop/common/hadoop-2.4.0/hadoop-2.4.0.tar.gz
+$ sudo tar vxzf hadoop-2.4.0.tar.gz -C /usr/local
+$ cd /usr/local
+$ sudo mv hadoop-2.4.0 hadoop
+$ sudo chown -R hduser:hadoop hadoop
+</code></p>
+
+<h1>Setup Hadoop Environment Variables</h1>
+
+<p><code>
+$cd ~
+$vi .bashrc
+</code></p>
+
+<p>paste following to the end of the file</p>
+
+<p>```</p>
+
+<h1>Hadoop variables</h1>
+
+<p>export JAVA_HOME=/usr/lib/jvm/jdk/
+export HADOOP_INSTALL=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_INSTALL/bin
+export PATH=$PATH:$HADOOP_INSTALL/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+export YARN_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_INSTALL}/lib/native
+export HADOOP_OPTS=&ldquo;-Djava.library.path=$HADOOP_INSTALL/lib&rdquo;</p>
+
+<h3>end of paste</h3>
+
+<p>```</p>
+
+<p>```
+$ cd /usr/local/hadoop/etc/hadoop
+$ vi hadoop-env.sh</p>
+
+<h1>modify JAVA_HOME</h1>
+
+<p>export JAVA_HOME=/usr/lib/jvm/jdk/
+Re-login into Ubuntu using hdser and check hadoop version
+$ hadoop version
+Hadoop 2.4.0
+Subversion <a href="http://svn.apache.org/repos/asf/hadoop/common">http://svn.apache.org/repos/asf/hadoop/common</a> -r 1583262
+Compiled by jenkins on 2014-03-31T08:29Z
+Compiled with protoc 2.5.0
+From source with checksum 375b2832a6641759c6eaf6e3e998147
+This command was run using /usr/local/hadoop-2.4.0/share/hadoop/common/hadoop-common-2.4.0.jar
+```
+At this point, hadoop is installed.</p>
+
+<h1>Configuring Hadoop</h1>
+
+<p>based on script of ericduq at <a href="https://github.com/ericduq/hadoop-scripts/blob/master/make-single-node.sh">https://github.com/ericduq/hadoop-scripts/blob/master/make-single-node.sh</a></p>
+
+<p>```
+$ cd /usr/local/hadoop/etc/hadoop</p>
+
+<h1>Edit configuration files</h1>
+
+<p>$ sudo -u hduser sed -i.bak &rsquo;s=<configuration>=<configuration>&lt;property>&lt;name>fs.default.name&lt;/name>&lt;value>hdfs://localhost:9000&lt;/value>&lt;/property>=g' core-site.xml
+$ sudo -u hduser sed -i.bak &rsquo;s=<configuration>=<configuration>&lt;property>&lt;name>yarn.nodemanager.aux-services</name>&lt;value>mapreduce_shuffle</value>&lt;/property>&lt;property>&lt;name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>&lt;value>org.apache.hadoop.mapred.ShuffleHandler</value>&lt;/property>=g' yarn-site.xml</p>
+
+<p>$ sudo -u hduser cp mapred-site.xml.template mapred-site.xml
+$ sudo -u hduser sed -i.bak &rsquo;s=<configuration>=<configuration>&lt;property>&lt;name>mapreduce.framework.name</name>&lt;value>yarn</value>&lt;/property>=g' mapred-site.xml</p>
+
+<p>$ cd ~
+$ mkdir -p mydata/hdfs/namenode
+$ mkdir -p mydata/hdfs/datanode</p>
+
+<p>$ cd /usr/local/hadoop/etc/hadoop
+$ sudo -u hduser sed -i.bak &rsquo;s=<configuration>=<configuration>&lt;property>&lt;name>dfs.replication</name>&lt;value>1&lt;/value>&lt;/property>&lt;property>&lt;name>dfs.namenode.name.dir</name>&lt;value>file:/home/hduser/mydata/hdfs/namenode</value>&lt;/property>&lt;property>&lt;name>dfs.datanode.data.dir</name>&lt;value>file:/home/hduser/mydata/hdfs/datanode</value>&lt;/property>=g' hdfs-site.xml</p>
+
+<h1>Format Namenode</h1>
+
+<h1>hdfs namenode -format</h1>
+
+<h1>Start Hadoop Service</h1>
+
+<h1>sudo -u hduser start-dfs.sh</h1>
+
+<h1>sudo -u hduser start-yarn.sh</h1>
+
+<h1>Check status</h1>
+
+<h1>sudo -u hduser jps</h1>
+
+<h1>Example</h1>
+
+<h1>sudo -u hduser cd /usr/local/hadoop</h1>
+
+<h1>sudo -u hduser hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 2 5</h1>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Configuring Ubuntu Server 14.04 LTS]]></title>
@@ -42,14 +152,15 @@ scp ~/.ssh/id_rsa.pub &lt;username&gt;@&lt;host&gt;:~/.ssh/authorized_keys
 </ol>
 
 
-<p>```
-$ sudo apt-get install openjdk-7-jdk</p>
-
-<p>$ java -version
-java version &ldquo;1.7.0_51&rdquo;
+<p><code>
+$ sudo apt-get install openjdk-7-jdk
+$ cd /usr/lib/jvm
+$ sudo ln -s java-7-openjdk-amd64 jdk
+$ java -version
+java version "1.7.0_51"
 OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
 OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
-```</p>
+</code></p>
 ]]></content>
   </entry>
   

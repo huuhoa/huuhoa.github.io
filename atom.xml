@@ -4,7 +4,7 @@
   <title><![CDATA[A coder in the attic]]></title>
   <link href="http://huuhoa.blackci.com/atom.xml" rel="self"/>
   <link href="http://huuhoa.blackci.com/"/>
-  <updated>2014-04-18T17:55:07+07:00</updated>
+  <updated>2014-04-19T08:24:36+07:00</updated>
   <id>http://huuhoa.blackci.com/</id>
   <author>
     <name><![CDATA[Huu Hoa NGUYEN]]></name>
@@ -12,6 +12,164 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Install and Configure Hadoop on Ubuntu 14.04 LTS]]></title>
+    <link href="http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts/"/>
+    <updated>2014-04-18T23:38:24+07:00</updated>
+    <id>http://huuhoa.blackci.com/blog/2014/04/18/install-and-configure-hadoop-on-ubuntu-14-dot-04-lts</id>
+    <content type="html"><![CDATA[<p>Following steps were copied from a <a href="http://codesfusion.blogspot.com/2013/10/setup-hadoop-2x-220-on-ubuntu.html">blog post</a> and kept here for reference purpose only.</p>
+
+<h1>Download Hadoop 2.4.0</h1>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd ~
+</span><span class='line'>$ wget http://apache.osuosl.org/hadoop/common/hadoop-2.4.0/hadoop-2.4.0.tar.gz
+</span><span class='line'>$ sudo tar vxzf hadoop-2.4.0.tar.gz -C /usr/local
+</span><span class='line'>$ cd /usr/local
+</span><span class='line'>$ sudo mv hadoop-2.4.0 hadoop
+</span><span class='line'>$ sudo chown -R hduser:hadoop hadoop</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Setup Hadoop Environment Variables</h1>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$cd ~
+</span><span class='line'>$vi .bashrc</span></code></pre></td></tr></table></div></figure>
+
+
+<p>paste following to the end of the file</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#Hadoop variables
+</span><span class='line'>export JAVA_HOME=/usr/lib/jvm/jdk/
+</span><span class='line'>export HADOOP_INSTALL=/usr/local/hadoop
+</span><span class='line'>export PATH=$PATH:$HADOOP_INSTALL/bin
+</span><span class='line'>export PATH=$PATH:$HADOOP_INSTALL/sbin
+</span><span class='line'>export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+</span><span class='line'>export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+</span><span class='line'>export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+</span><span class='line'>export YARN_HOME=$HADOOP_INSTALL
+</span><span class='line'>export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_INSTALL}/lib/native
+</span><span class='line'>export HADOOP_OPTS="-Djava.library.path=$HADOOP_INSTALL/lib"
+</span><span class='line'>###end of paste</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /usr/local/hadoop/etc/hadoop
+</span><span class='line'>$ vi hadoop-env.sh
+</span><span class='line'>
+</span><span class='line'>#modify JAVA_HOME
+</span><span class='line'>export JAVA_HOME=/usr/lib/jvm/jdk/
+</span><span class='line'>Re-login into Ubuntu using hdser and check hadoop version
+</span><span class='line'>$ hadoop version
+</span><span class='line'>Hadoop 2.4.0
+</span><span class='line'>Subversion http://svn.apache.org/repos/asf/hadoop/common -r 1583262
+</span><span class='line'>Compiled by jenkins on 2014-03-31T08:29Z
+</span><span class='line'>Compiled with protoc 2.5.0
+</span><span class='line'>From source with checksum 375b2832a6641759c6eaf6e3e998147
+</span><span class='line'>This command was run using /usr/local/hadoop-2.4.0/share/hadoop/common/hadoop-common-2.4.0.jar</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+At this point, hadoop is installed.</p>
+
+<h1>Configuring Hadoop</h1>
+
+<p>based on script of ericduq at <a href="https://github.com/ericduq/hadoop-scripts/blob/master/make-single-node.sh">https://github.com/ericduq/hadoop-scripts/blob/master/make-single-node.sh</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /usr/local/hadoop/etc/hadoop
+</span><span class='line'># Edit configuration files
+</span><span class='line'>$ sudo -u hduser sed -i.bak 's=&lt;configuration&gt;=&lt;configuration&gt;\&lt;property&gt;\&lt;name&gt;fs\.default\.name\&lt;/name&gt;\&lt;value&gt;hdfs://localhost:9000\&lt;/value&gt;\&lt;/property&gt;=g' core-site.xml 
+</span><span class='line'>$ sudo -u hduser sed -i.bak 's=&lt;configuration&gt;=&lt;configuration&gt;\&lt;property&gt;\&lt;name&gt;yarn\.nodemanager\.aux-services&lt;/name&gt;\&lt;value&gt;mapreduce_shuffle&lt;/value&gt;\&lt;/property&gt;\&lt;property&gt;\&lt;name&gt;yarn.nodemanager.aux-services.mapreduce.shuffle.class&lt;/name&gt;\&lt;value&gt;org\.apache\.hadoop\.mapred\.ShuffleHandler&lt;/value&gt;\&lt;/property&gt;=g' yarn-site.xml
+</span><span class='line'>  
+</span><span class='line'>$ sudo -u hduser cp mapred-site.xml.template mapred-site.xml
+</span><span class='line'>$ sudo -u hduser sed -i.bak 's=&lt;configuration&gt;=&lt;configuration&gt;\&lt;property&gt;\&lt;name&gt;mapreduce\.framework\.name&lt;/name&gt;\&lt;value&gt;yarn&lt;/value&gt;\&lt;/property&gt;=g' mapred-site.xml
+</span><span class='line'> 
+</span><span class='line'>$ cd ~
+</span><span class='line'>$ mkdir -p mydata/hdfs/namenode
+</span><span class='line'>$ mkdir -p mydata/hdfs/datanode
+</span><span class='line'>
+</span><span class='line'>$ cd /usr/local/hadoop/etc/hadoop
+</span><span class='line'>$ sudo -u hduser sed -i.bak 's=&lt;configuration&gt;=&lt;configuration&gt;\&lt;property&gt;\&lt;name&gt;dfs\.replication&lt;/name&gt;\&lt;value&gt;1\&lt;/value&gt;\&lt;/property&gt;\&lt;property&gt;\&lt;name&gt;dfs\.namenode\.name\.dir&lt;/name&gt;\&lt;value&gt;file:/home/hduser/mydata/hdfs/namenode&lt;/value&gt;\&lt;/property&gt;\&lt;property&gt;\&lt;name&gt;dfs\.datanode\.data\.dir&lt;/name&gt;\&lt;value&gt;file:/home/hduser/mydata/hdfs/datanode&lt;/value&gt;\&lt;/property&gt;=g' hdfs-site.xml
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'># Format Namenode
+</span><span class='line'># hdfs namenode -format
+</span><span class='line'>
+</span><span class='line'># Start Hadoop Service
+</span><span class='line'># sudo -u hduser start-dfs.sh
+</span><span class='line'># sudo -u hduser start-yarn.sh
+</span><span class='line'>
+</span><span class='line'># Check status
+</span><span class='line'># sudo -u hduser jps
+</span><span class='line'>
+</span><span class='line'># Example
+</span><span class='line'># sudo -u hduser cd /usr/local/hadoop
+</span><span class='line'># sudo -u hduser hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 2 5</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Configuring Ubuntu Server 14.04 LTS]]></title>
@@ -50,8 +208,10 @@
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
+<span class='line-number'>7</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openjdk-7-jdk
-</span><span class='line'>
+</span><span class='line'>$ cd /usr/lib/jvm
+</span><span class='line'>$ sudo ln -s java-7-openjdk-amd64 jdk
 </span><span class='line'>$ java -version
 </span><span class='line'>java version "1.7.0_51"
 </span><span class='line'>OpenJDK Runtime Environment (IcedTea 2.4.6) (7u51-2.4.6-1ubuntu4)
